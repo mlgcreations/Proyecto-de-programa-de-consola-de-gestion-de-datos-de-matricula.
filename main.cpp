@@ -13,7 +13,7 @@
 
 using namespace std;
 
-//configuración de colores (se activan si la consola soporta VT)
+//configuración de colores
 string C_MENU = "";
 string C_RESET = "";
 string C_OUT = "";
@@ -27,7 +27,7 @@ void clearScreen() {
 #endif
 }
 
-//intenta habilitar virtual terminal processing en Windows para que las secuencias ANSI funcionen
+//intenta habilitar virtual terminal processing en windows
 bool enableVirtualTerminalProcessing() {
 #ifdef _WIN32
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
