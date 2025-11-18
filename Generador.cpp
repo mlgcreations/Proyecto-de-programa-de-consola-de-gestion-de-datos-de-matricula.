@@ -68,17 +68,17 @@ int main() {
     
     // Escribir encabezado del archivo
     archivo << "# Base de Datos de Estudiantes - Colegio Estatal Santa Barbara" << endl;
-    archivo << "# Formato: Codigo|Nombre|Edad|Grado|Seccion|Promedio|Asistencia(%)|Becado" << endl;
+    archivo << "# Formato: Codigo,Nombre,Edad,Grado,Seccion,Promedio,Asistencia(%),Becado" << endl;
     archivo << "# =============================================================================" << endl;
     archivo << endl;
     
-    int totalEstudiantes = 120; // Generar 120 estudiantes (20 por grado)
+    int totalEstudiantes = 480; // Generar 480 estudiantes (80 por grado, aprox 20 por aula)
     int codigoBase = 2025001;
     
     cout << "Generando datos de " << totalEstudiantes << " estudiantes..." << endl;
     
     for (int i = 0; i < totalEstudiantes; i++) {
-        int grado = (i / 20) + 1; // Distribuir 20 estudiantes por grado (1-6)
+        int grado = (i / 80) + 1; // Distribuir 80 estudiantes por grado (1-6)
         
         // Generar datos del estudiante
         int codigo = codigoBase + i;
@@ -90,13 +90,13 @@ int main() {
         bool becado = (promedio >= 16.0 && rand() % 100 < 30); // 30% probabilidad si tiene buen promedio
         
         // Escribir en formato delimitado por |
-        archivo << codigo << "|"
-                << nombre << "|"
-                << edad << "|"
-                << grado << "|"
-                << seccion << "|"
-                << promedio << "|"
-                << asistencia << "|"
+        archivo << codigo << ","
+                << nombre << ","
+                << edad << ","
+                << grado << ","
+                << seccion << ","
+                << promedio << ","
+                << asistencia << ","
                 << (becado ? "SI" : "NO") << endl;
     }
     
